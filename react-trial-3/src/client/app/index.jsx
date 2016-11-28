@@ -41,13 +41,16 @@ function getGreeting(user) {
     return <h1>Hello, Stranger.</h1>;
 }
 
-const secondElement = getGreeting(user);
-
+//NOTE: Multiple ReactDOM.render() calls seem not to work? Maybe there can be only a single ReactDOM.render() call per page? Confirm this.
+//const secondElement = getGreeting(user);
 //ReactDOM.render(secondElement, document.getElementById('app'));
 
 //NOTE: Renders a clock of the current time
 function tick() {
-    //NOTE: "Welcome(input)" is a ReactJS component, "input" is a ReactJS props (input for a ReactJS component)
+    /*NOTE: "Welcome(input)" is a ReactJS component, "input" is a ReactJS props (input for a ReactJS component).
+    Props are read only and cannot be modified within the Component body
+    Components can be made from other components from code-reuse, etc.
+    */
     function Welcome(input) {
         return <h3>Hello, {input.name}!</h3>;
     }
